@@ -1,0 +1,1 @@
+koktel:mojito:whiskey_50,cukor_10;

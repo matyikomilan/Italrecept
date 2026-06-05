@@ -1,0 +1,4 @@
+shotok:shot noknek:cukorszirup_200,vodka_500;
+Long Drink:ujrecept:vodka_40,ananaszle_50;
+Long Drink:Pina Colada:ananaszle_90,kokusz szirup_30,feher rum_30;
+kevert koktel:negroni:gin_30,voros vermouth_30,campari_30;
