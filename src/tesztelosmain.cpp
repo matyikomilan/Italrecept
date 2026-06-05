@@ -230,14 +230,14 @@ void TESZT_fajlk(){
 
    //mentes fajlba:
    Fajlkezelo fk;
-   fk.hozzk_ment("TESZT_hozzk.txt", hozzk);
-   fk.reck_ment("TESZT_reck.txt", reck);
+   fk.hozzk_ment("data/TESZT_hozzk.txt", hozzk);
+   fk.reck_ment("data/TESZT_reck.txt", reck);
    //std::cout << "sikeres mentes fajlba";
 
    //betoltes fajlbol:
-   DinTomb<Hozzavalo*> hozzk_betolt = fk.hozzk_betolt("TESZT_hozzk.txt");
+   DinTomb<Hozzavalo*> hozzk_betolt = fk.hozzk_betolt("data/TESZT_hozzk.txt");
    //std::cout << "hozzavalok sikeresen beolvasva2";
-   DinTomb<Recept> reck_betolt = fk.reck_betolt("TESZT_reck.txt", hozzk_betolt);
+   DinTomb<Recept> reck_betolt = fk.reck_betolt("data/TESZT_reck.txt", hozzk_betolt);
    //std::cout << "receptek sikeresen beolvasva";
    //kiiras:
    std::cout << "Betoltott receptek:\n";
@@ -274,10 +274,10 @@ void TESZT_adatb(){
    DinTomb<Recept> reck;
    reck.push_back(r1);
    Fajlkezelo fk;
-   fk.hozzk_ment("TESZT_hozzk.txt", hozzk);
-   fk.reck_ment("TESZT_reck.txt", reck);
+   fk.hozzk_ment("data/TESZT_hozzk.txt", hozzk);
+   fk.reck_ment("data/TESZT_reck.txt", reck);
    //betoltes:
-   adatb.betolt("TESZT_reck.txt", "TESZT_hozzk.txt", "statikus_receptek.txt");
+   adatb.betolt("data/TESZT_reck.txt", "data/TESZT_hozzk.txt", "data/statikus_receptek.txt");
    //kiiras:
    for (size_t i = 0; i < adatb.getHozzk().getSize(); ++i) {
       std::cout << adatb.getHozzk()[i]->getNev() << std::endl;
@@ -330,7 +330,7 @@ void TESZT_menu(){
    //az adatbazist meg kell tolteni, hogy tesztelheto legyen a menu, mert a menu aktivan hasznalja az adatbazist
    //szuksegesek a tesztelos txt-k
 
-   adatb.betolt("TESZT_reck.txt", "TESZT_hozzk.txt", "statikus_receptek.txt");
+   adatb.betolt("data/TESZT_reck.txt", "data/TESZT_hozzk.txt", "data/statikus_receptek.txt");
 
    menu.fomenu(std::cout);
 
@@ -430,7 +430,7 @@ void TESZT_kivetelek() {
 
    try {
       Fajlkezelo fk;
-      fk.hozzk_betolt("nem_letezik.txt"); // Nem letezo fajl
+      fk.hozzk_betolt("data/nem_letezik.txt"); // Nem letezo fajl
    } catch (const FileError& e) {
       std::cout << "Fajlkezelo nem letezo fajl: "; e.what().kiir(std::cout); std::cout << std::endl;
    }
@@ -486,7 +486,7 @@ int main(){
 
    //adatbazis es menu inicializalasa
    Adatbazis adatb;
-   adatb.betolt("receptek.txt", "hozzavalok.txt", "statikus_receptek.txt");
+   adatb.betolt("data/receptek.txt", "data/hozzavalok.txt", "data/statikus_receptek.txt");
    Menu menu(&adatb);
 
    //user-input valtozoja
@@ -617,7 +617,7 @@ int main(){
    
    //Mentjuk az esetleg megvaltoztatott adatbazist fajlba, de ezt is hibakezelve kell, mert dobhat hibat ugye
    try{
-      adatb.ment("receptek.txt", "hozzavalok.txt");
+      adatb.ment("data/receptek.txt", "data/hozzavalok.txt");
    }
    catch(const FileError& e){
       os << "adatmentes kozben hiba: ";
