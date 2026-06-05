@@ -11,6 +11,7 @@ A console-based object-oriented C++ application designed to manage drink recipes
 Modern C++ projects usually rely heavily on the Standard Template Library, but this project was intentionally built without the use of STL, to prove a deep understanding of how memory and pointers work.
 
 ## Technical Features
+
 * **Data Structures:** Implementation of a custom dynamic array (`DinTomb`) and a custom string class (`Sztring`).
 * **Memory Management:** Manual usage of raw pointers and dynamic memory allocation.
 * **Leak Detection:** Integrated with a custom memory trace header (`memtrace.h`) to guarantee a 100% memory-leak-free execution.
@@ -30,8 +31,7 @@ Modern C++ projects usually rely heavily on the Standard Template Library, but t
 To compile and run the project locally using a standard C++ compiler (like g++):
 
 1. Clone the repository.
-2. Navigate to the `src` directory.
 3. Compile the source files:
-`g++ -Wall -Wextra -g *.cpp -o DrinkManager`
+`g++ tesztelosmain.cpp Adatbazis.cpp Fajlkezelo.cpp Hozzavalo_m.cpp Menu.cpp Recept.cpp Sztring.cpp memtrace.cpp -o tesztelosmain.exe`
 4. Run the executable:
-`./DrinkManager`
+`./src/tesztelosmain.exe`
